@@ -15,7 +15,6 @@ const config: HardhatUserConfig = {
 		},
 	},
 	defaultNetwork: 'hardhat',
-	// defaultNetwork: 'localcofhe',
 	networks: {
 		// The plugin already provides localcofhe configuration
 

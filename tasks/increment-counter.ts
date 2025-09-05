@@ -22,7 +22,11 @@ task('increment-counter', 'Increment the counter on the deployed contract').setA
 	// Get the signer
 	const [signer] = await ethers.getSigners()
 	console.log(`Using account: ${signer.address}`)
-	await cofhejs_initializeWithHardhatSigner(signer)
+	await cofhejs.initializeWithEthers({
+		ethersProvider: ethers.provider,
+		ethersSigner: signer,
+		environment: "TESTNET",
+	  });
 
 	// Get the contract instance with proper typing
 	const Counter = await ethers.getContractFactory('Counter')
